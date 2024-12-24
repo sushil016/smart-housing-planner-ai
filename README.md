@@ -124,18 +124,8 @@ root/
 
 ---
 
-## 📚 Documentation
-
-For detailed documentation, refer to the `docs/` folder or [visit the website](https://your-website-url.com).
-
----
 
 ## 🤝 Contributing
 
 We welcome contributions! Please fork the repository and submit a pull request.
 
----
-
-## 📜 License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
