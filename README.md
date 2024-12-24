@@ -1,84 +1,141 @@
-# Turborepo starter
+# Smart Housing and Urban Planning with AI
 
-This is an official starter Turborepo.
+This project aims to revolutionize affordable housing and urban planning using Artificial Intelligence. It provides tools for analyzing land usage, optimizing housing projects, and ensuring affordability and transparency.
 
-## Using this example
+---
 
-Run the following command:
+## 🚀 Features
 
-```sh
-npx create-turbo@latest
+1. **AI-Driven Land Analysis**: Identify optimal locations for housing projects using population density, land usage, and urban zoning data.
+2. **Affordable Housing Cost Estimation**: Estimate costs for housing projects while ensuring affordability.
+3. **Transparent Allocation**: AI tools to ensure transparent allocation of government housing schemes.
+4. **Predictive Maintenance**: Tools for identifying maintenance needs in existing urban housing.
+5. **Web and Mobile Compatibility**: Access project features via web and mobile applications.
+
+---
+
+## 🏗️ Architecture
+
+### **Folder Structure**
+```
+root/
+├── apps/
+│   ├── mobile/               # React Native app
+│   ├── web/                  # Next.js app (frontend and backend)
+│   ├── web-socket-server/    # WebSocket server for real-time updates
+├── packages/
+│   ├── ai-engine/            # Python-based AI/ML models
+│   ├── database/             # Prisma schema and database migrations
+│   ├── shared/               # Shared logic, utilities, and constants
+│   ├── ui/                   # Reusable UI components
+│   ├── eslint-config/        # Shared ESLint configuration
+│   ├── typescript-config/    # Shared TypeScript configuration
+├── .turbo/                   # Turborepo cache
+├── package.json              # Root dependencies
+├── turbo.json                # Turborepo configuration
+└── README.md                 # Project documentation
 ```
 
-## What's inside?
+---
 
-This Turborepo includes the following packages/apps:
+## 🧰 Tech Stack
 
-### Apps and Packages
+- **Frontend**: Next.js (Web), React Native (Mobile)
+- **Backend**: Next.js API Routes, Node.js WebSocket server
+- **AI/ML**: Python (TensorFlow, scikit-learn)
+- **Database**: PostgreSQL with Prisma ORM
+- **Dev Tools**: Turborepo, TypeScript, Docker
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+---
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+## 🛠️ Setup Instructions
 
-### Utilities
+### **Prerequisites**
+- Node.js (>= 18.x)
+- Yarn (>= 1.x)
+- Python (>= 3.8)
+- PostgreSQL (>= 13.x)
 
-This Turborepo has some additional tools already setup for you:
+### **Installation**
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/sushil016/smart-housing-planner-ai.git
+   cd smart-housing-planner-ai
+   ```
+2. Install dependencies:
+   ```bash
+   yarn install
+   ```
+3. Set up the database:
+   ```bash
+   cd packages/database
+   yarn prisma migrate dev
+   ```
+4. Start the development servers:
+   ```bash
+   # Start the web app
+   cd apps/web
+   yarn dev
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+   # Start the mobile app (Expo)
+   cd apps/mobile
+   yarn start
 
-### Build
+   # Start the WebSocket server
+   cd apps/web-socket-server
+   yarn start
+   ```
 
-To build all apps and packages, run the following command:
+---
 
-```
-cd my-turborepo
-pnpm build
-```
+## 📦 Packages
 
-### Develop
+| Package           | Description                                |
+|-------------------|--------------------------------------------|
+| `ai-engine`       | Python-based AI/ML models for land and housing analysis. |
+| `database`        | Prisma schema and migrations for PostgreSQL. |
+| `shared`          | Shared logic and utilities for all apps.   |
+| `ui`              | Reusable React and React Native components. |
+| `eslint-config`   | Shared ESLint configuration.               |
+| `typescript-config` | Shared TypeScript configurations.        |
 
-To develop all apps and packages, run the following command:
+---
 
-```
-cd my-turborepo
-pnpm dev
-```
+## 🧪 Testing
 
-### Remote Caching
+1. Run lint checks:
+   ```bash
+   yarn lint
+   ```
+2. Run unit tests:
+   ```bash
+   yarn test
+   ```
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+---
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+## 🌐 Deployment
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+1. Set up environment variables in `.env` files for each app.
+2. Build and deploy using Docker:
+   ```bash
+   docker-compose up --build
+   ```
 
-```
-cd my-turborepo
-npx turbo login
-```
+---
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+## 📚 Documentation
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+For detailed documentation, refer to the `docs/` folder or [visit the website](https://your-website-url.com).
 
-```
-npx turbo link
-```
+---
 
-## Useful Links
+## 🤝 Contributing
 
-Learn more about the power of Turborepo:
+We welcome contributions! Please fork the repository and submit a pull request.
 
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+---
+
+## 📜 License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
